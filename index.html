@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -37,7 +37,8 @@
             for (let i = 0; i < children.length; i++){
                 document.getElementById("directory"+elementIndex).innerHTML += `
                     <div class="item">
-                        <a href=${children[i]["url"]}>${children[i]["name"]}</a>
+                        <img class="favicon">
+                        <a class="item-link" href=${children[i]["url"]}>${children[i]["name"]}</a>
                     </div>
                 `
             }
