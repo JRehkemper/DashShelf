@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id = "app">
+            <h1 id="header">Dashboard</h1>
+            <div id="bookmarks">
+
+            </div>
+        </div>
+
+    </body>
+    <script src="bookmarks.js"></script>
+    <script>
+        var bookmarksList = bookmarksFile["roots"]["bookmark_bar"]["children"]
+        var numberOfDirs = bookmarksList.length
+        for (let i = 0; i < numberOfDirs; i++) {
+            addElements(bookmarksList[i], i);
+        }
+
+        function addElements(elements, elementIndex) {
+            console.log(elements["name"])
+            var children = elements["children"]
+            
+
+            // Add HTML Code
+            document.getElementById("bookmarks").innerHTML += `
+            <div class="directory" id="directory${elementIndex}">
+                <h2>${elements["name"]}</h2>
+            </div>
+            `
+
+            console.log(children[0])
+            for (let i = 0; i < children.length; i++){
+                document.getElementById("directory"+elementIndex).innerHTML += `
+                    <div class="item">
+                        <a href=${children[i]["url"]}>${children[i]["name"]}</a>
+                    </div>
+                `
+            }
+            console.log(document.getElementById("directory"+elementIndex))
+        }
+    </script>
+</html>
