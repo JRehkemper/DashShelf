@@ -2,14 +2,6 @@
 <html>
     <head>
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
-        <!-- Fonts to support Material Design -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
-        <!-- Icons to support Material Design -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-        <!-- Material UI CDN -->
-        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-        <!-- custome Stylesheet -->
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -18,12 +10,12 @@
             <div id="bookmarks">
 
             </div>
-            <button class="mdc-button mdc-button--raised">Material UI</button>
         </div>
 
     </body>
     <script src="bookmarks.js"></script>
     <script>
+
         var bookmarksList = bookmarksFile["roots"]["bookmark_bar"]["children"]
         var numberOfDirs = bookmarksList.length
         for (let i = 0; i < numberOfDirs; i++) {
@@ -38,16 +30,20 @@
             // Add HTML Code
             document.getElementById("bookmarks").innerHTML += `
             <div class="directory" id="directory${elementIndex}">
-                <h2>${elements["name"]}</h2>
+                <h2 class="directory-title">${elements["name"]}</h2>
             </div>
             `
 
             console.log(children[0])
             for (let i = 0; i < children.length; i++){
                 document.getElementById("directory"+elementIndex).innerHTML += `
-                    <div class="item">
-                        <img class="favicon">
-                        <a class="item-link" href=${children[i]["url"]}>${children[i]["name"]}</a>
+                    <div class="card">
+                        <div class="thumbnail-div">
+                            <img class="thumbnail" src="https://jrehkemper.de/img/favicon.svg">
+                        </div>
+                        <div class="card-title-div">
+                            <a class="card-title" href=${children[i]["url"]} target="_blank">${children[i]["name"]}</a>    
+                        </div>
                     </div>
                 `
             }

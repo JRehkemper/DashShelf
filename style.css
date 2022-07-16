@@ -3,21 +3,29 @@
     margin: 0;
 }
 
+body {
+    background-color: #2D4263;
+}
+
+a, a:visited, h1, h2 {
+    color: #DBDBDB;
+    text-decoration: none;
+}
+
 h1 {
     margin-top: 1.5em;
     margin-left: 1.5em;
     padding: 1em 0 0em 0;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
-
 #app {
     margin-left: 2em;
     padding: 1em 4em 1em 4em;
     font-family: Arial, Helvetica, sans-serif
+}
+
+#header {
+    padding-left: 15px;
 }
 
 #bookmarks {
@@ -30,20 +38,26 @@ a {
     margin: 2em 3em 0 3em;
 }
 
-.item {
-    margin-top: 10px;
-    /*padding: 0.5em 1em 0.5em 1em;*/
-    background-color: aliceblue;
-    border-radius: 0.75em;
-    padding: 2em;
-    vertical-align: middle;
+.directory-title {
+    padding-left: 25px;
 }
 
-.item-link {
-
+.card {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0.5em;
+    background-color: #192231;
+    border-radius: 10px;
+    align-items: center;
 }
 
-.favicon {
-    width: 40px;
-    height: 40px;
+.thumbnail {
+    width: 32px;
+    height: 32px;
+    padding: 10px 5px 10px 20px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    padding: 10px 20px 10px 10px;
 }
