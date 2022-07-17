@@ -3,14 +3,14 @@ chrome.tabs.query({active: true}, function(tabs) {
     tabId = tabs[0]["id"]
     chrome.scripting.executeScript({
         target: {tabId: tabId},
-        func: main,
+        func: main(),
     })
 })
 
 
 function main() {
-    var bookmarksList = bookmarksFile["roots"]["bookmark_bar"]["children"]
-    console.log(bookmarksList)
+    console.log("Func main")
+    var bookmarksList = bookmarksFile[0]["children"][0]["children"]
     var numberOfDirs = bookmarksList.length
     for (let i = 0; i < numberOfDirs; i++) {
         addElements(bookmarksList[i], i);
@@ -18,14 +18,14 @@ function main() {
 }
 
 function addElements(elements, elementIndex) {
-    console.log(elements["name"])
+    console.log(elements["title"])
     var children = elements["children"]
     
 
     // Add HTML Code
     document.getElementById("bookmarks").innerHTML += `
     <div class="directory" id="directory${elementIndex}">
-        <h2 class="directory-title">${elements["name"]}</h2>
+        <h2 class="directory-title">${elements["title"]}</h2>
     </div>
     `
 
@@ -37,7 +37,7 @@ function addElements(elements, elementIndex) {
                     <img class="thumbnail" src="https://jrehkemper.de/img/favicon.svg">
                 </div>
                 <div class="card-title-div">
-                    <a class="card-title" href=${children[i]["url"]} target="_blank">${children[i]["name"]}</a>    
+                    <a class="card-title" href=${children[i]["url"]} target="_blank">${children[i]["title"]}</a>    
                 </div>
             </div>
         `

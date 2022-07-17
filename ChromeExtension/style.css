@@ -19,13 +19,13 @@ h1 {
 }
 
 #app {
-    margin-left: 2em;
-    padding: 1em 4em 1em 4em;
+    margin-left: 20px;
+    padding: 10px 40px 10px 40px;
     font-family: Arial, Helvetica, sans-serif
 }
 
 #header {
-    padding-left: 15px;
+    padding-left: 25px;
 }
 
 #bookmarks {
