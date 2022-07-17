@@ -1,0 +1,15 @@
+{
+    "name": "Bookmark-Dashboard",
+    "description": "Create a Dashboard of all your Bookmarks",
+    "version": "0.0.1",
+    "permissions": [
+        "bookmarks",
+        "scripting",
+        "tabs"
+    ],
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "host_permissions": ["index.html"],
+    "manifest_version": 3
+  }
