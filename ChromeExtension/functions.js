@@ -7,7 +7,6 @@ chrome.tabs.query({active: true}, function(tabs) {
     })
 })
 
-
 function main() {
     console.log("Func main")
     var bookmarksList = bookmarksFile[0]["children"][0]["children"]
