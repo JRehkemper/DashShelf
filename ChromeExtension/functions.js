@@ -23,11 +23,13 @@ function main() {
     for (let i = 0; i < numberOfDirs; i++) {
         addElements(bookmarksList[i], i);
     }
-    document.getElementById("bookmarks").innerHTML += `
-        <div class="directory" id="directory-unsorted">
-            <h2 class="directory-title">Unsorted Bookmarks</h2>
-        </div>`
-    addUnsortedElements(unsortedBookmarks)
+    if(unsortedBookmarks.length > 0) {
+        document.getElementById("bookmarks").innerHTML += `
+            <div class="directory" id="directory-unsorted">
+                <h2 class="directory-title">Unsorted Bookmarks</h2>
+            </div>`
+        addUnsortedElements(unsortedBookmarks)
+    }
 }
 
 function addElements(elements, elementIndex) {
