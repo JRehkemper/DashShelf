@@ -1,3 +1,8 @@
+var bookmarksFile
+chrome.bookmarks.getTree(function(tree) {
+    bookmarksFile = tree;
+})
+
 var tabId
 chrome.tabs.query({active: true}, function(tabs) {
     tabId = tabs[0]["id"]
@@ -8,6 +13,7 @@ chrome.tabs.query({active: true}, function(tabs) {
 })
 
 function main() {
+    console.log(bookmarksFile)
     var bookmarkArr = bookmarksFile[0]["children"][0]["children"]
     var bookmarksList = []
     var unsortedBookmarks = []
@@ -44,15 +50,17 @@ function addElements(elements, elementIndex) {
 
     for (let i = 0; i < children.length; i++){
         document.getElementById("directory"+elementIndex).innerHTML += `
-            <div class="card">
-                <div class="thumbnail-div">
-                    <!--<img class="thumbnail" src="https://jrehkemper.de/img/favicon.svg">-->
-                    <div class="bookmark-icon"></div>
+            <a class="card-title" href=${children[i]["url"]} target="_blank">    
+                <div class="card">
+                    <div class="thumbnail-div">
+                        <!--<img class="thumbnail" src="http://www.getfavicon.org/get.pl?url=${children[i]["url"]}&submitget=get+favicon">-->
+                        <div class="bookmark-icon"></div>
+                    </div>
+                    <div class="card-title-div">
+                        ${children[i]["title"]}
+                    </div>           
                 </div>
-                <div class="card-title-div">
-                    <a class="card-title" href=${children[i]["url"]} target="_blank">${children[i]["title"]}</a>    
-                </div>
-            </div>
+            </a> 
         `
     }
 }
@@ -60,15 +68,17 @@ function addElements(elements, elementIndex) {
 function addUnsortedElements(elements) {
     for (var i = 0; i < elements.length; i++) {
         document.getElementById("directory-unsorted").innerHTML += `
-            <div class="card">
-                <div class="thumbnail-div">
-                    <!--<img class="thumbnail" src="https://jrehkemper.de/img/favicon.svg">-->
-                    <div class="bookmark-icon"></div>
+            <a class="card-title" href="${elements[i]["url"]}" target="_blank">
+                <div class="card">
+                    <div class="thumbnail-div">
+                        <!--<img class="thumbnail" src="https://jrehkemper.de/img/favicon.svg">-->
+                        <div class="bookmark-icon"></div>
+                    </div>
+                    <div class="card-title-div">
+                        ${elements[i]["title"]}
+                    </div>
                 </div>
-                <div class="card-title-div">
-                    <a class="card-title" href="${elements[i]["url"]}" target="_blank">${elements[i]["title"]}</a>
-                </div>
-            </div>
+            </a>
         `
     }
 }
