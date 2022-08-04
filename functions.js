@@ -13,6 +13,77 @@ chrome.tabs.query({active: true}, function(tabs) {
 })
 
 function main() {
+    var date = new Date()
+    var day = date.getDate()
+    var month = date.getMonth()
+    console.log(typeof month)
+    var year = date.getFullYear()
+    var dow = date.getDay()
+    var dayOfWeek = "";
+    switch(dow) {
+        case 1:
+            dayOfWeek = "Monday"
+            break;
+        case 2:
+            dayOfWeek = "Tuesday"
+            break;
+        case 3:
+            dayOfWeek = "Wednesday"
+            break;
+        case 4:
+            dayOfWeek = "Thursday"
+            break;
+        case 5:
+            dayOfWeek = "Friday"
+            break;
+        case 6:
+            dayOfWeek = "Saturday"
+            break;
+        case 7:
+            dayOfWeek = "Sunday"
+            break;
+    }
+    var monthString = ""
+    switch(month) {
+        case 0:
+            monthString = "January"
+            break;
+        case 1:
+            monthString = "February"
+            break;
+        case 2:
+            monthString = "March"
+            break;
+        case 3:
+            monthString = "April"
+            break;
+        case 4:
+            monthString = "May"
+            break;
+        case 5:
+            monthString = "June"
+            break;
+        case 6:
+            monthString = "July"
+            break;
+        case 7:
+            monthString = "August"
+            break;
+        case 8:
+            monthString = "September"
+            break;
+        case 9:
+            monthString = "October"
+            break;
+        case 10:
+            monthString = "November"
+            break;
+        case 11:
+            monthString = "December"
+            break;
+    }
+    var dateString = dayOfWeek+" "+day+". "+monthString+" "+year
+    document.getElementById("date").innerHTML+= dateString
     console.log(bookmarksFile)
     var bookmarkArr = bookmarksFile[0]["children"][0]["children"]
     var bookmarksList = []

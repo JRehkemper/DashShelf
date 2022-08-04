@@ -4,6 +4,11 @@
 }
 
 body {
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    background-blend-mode: multiply;
     background-color: #2D4263;
 }
 
@@ -21,6 +26,10 @@ h1 {
 
 h2 {
     font-size: 26px;
+}
+
+#date {
+    margin-left: 60px;
 }
 
 #app {
@@ -57,11 +66,12 @@ h2 {
 
 .directory {
     margin: 2em 3em 3em 3em;
-    background-color: hsla(218, 32%, 15%, 0.3);
+    background-color: hsla(218, 32%, 15%, 0.6);
     border-radius: 10px;
     padding: 15px;
     width: 350px;
     overflow-x: hidden;
+    backdrop-filter: blur(15px);
 }
 
 .directory-title {
@@ -72,7 +82,7 @@ h2 {
     display: flex;
     justify-content: flex-start;
     margin: 0.5em;
-    background-color: #192231;
+    background-color: hsl(218, 32%, 13%);
     border-radius: 10px;
     align-items: center;
 }
