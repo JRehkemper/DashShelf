@@ -22,14 +22,17 @@ a, a:visited, h1, h2, label {
 }
 
 h1 {
-    margin-top: 1.5em;
     margin-left: 35px;
     padding: 1em 0 0em 0;
     font-size: 40px;
 }
 
 h2 {
-    font-size: 26px;
+    font-size: 20px;
+}
+
+div {
+    font-size: 11px;
 }
 
 #date {
@@ -70,7 +73,7 @@ h2 {
 
 .directory {
     margin: 2em 3em 3em 3em;
-    background-color: hsla(218, 32%, 15%, 0.6);
+    background-color: hsla(218, 32%, 25%, 0.3);
     border-radius: 10px;
     padding: 15px;
     width: var(--width);
@@ -86,7 +89,7 @@ h2 {
     display: flex;
     justify-content: flex-start;
     margin: 0.5em;
-    background-color: hsl(218, 32%, 13%);
+    background-color: hsl(218, 32%, 18%);
     border-radius: 10px;
     align-items: center;
 }
@@ -103,28 +106,46 @@ h2 {
 }
 
 .footer {
-    position: absolute;
-    bottom:0px;
-    width: 100vw;
+    width: 100%;
+    display: flex;
+    justify-content: right;
 }
 
 .github-logo-wrapper {
     display: flex;
-    justify-content: right;
-    margin: 20px;
+    justify-content: center;
 }
 
 .sliderForm {
-    padding: 1em;
+    /*padding: 1em;*/
     display: flex;
     align-items: center;
+    margin: 2em 3em 3em 3em;
+    background-color: hsla(218, 32%, 25%, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    /*width: var(--width);*/
+    overflow-x: hidden;
+    backdrop-filter: blur(15px);
 }
 
 .sliderForm label {
     padding: 1em;
 }
 
-.save-width {
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px;
     border-radius: 0.5em;
+    margin: 0 5px 0 5px;
+    background-color: hsl(218, 32%, 18%);
+    color: #DBDBDB;
+}
+
+.save-width {
     padding: 1em;
 }

@@ -133,6 +133,7 @@ function saveWidth() {
     chrome.storage.sync.set({"width": width}, function() {
         console.log('Width is set to ' + width);
     });
+    alert("Width successfully saved")
 }
 
 function addElements(elements, elementIndex) {
