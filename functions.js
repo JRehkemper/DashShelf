@@ -84,6 +84,24 @@ function main() {
     }
     var dateString = dayOfWeek+" "+day+". "+monthString+" "+year
     document.getElementById("date").innerHTML+= dateString
+    document.getElementById("save-width").addEventListener('click', saveWidth)
+    try {
+        chrome.storage.sync.get(["width"], function(result) {
+            console.log('Width loaded is ' + result.width);
+            const root = document.documentElement
+            root.style.setProperty("--width", result.width)
+            document.getElementById("slider").value = result.width.replace("px", "")
+        });
+    }
+    catch {
+        console.log("Couldn't load old width,")
+        document.getElementById("slider").value = "350px"
+    }
+    const slider = document.getElementById("slider");
+    slider.addEventListener("input", function(e) {
+        const root = document.documentElement
+        root.style.setProperty("--width", e.target.value+"px")
+    })
     console.log(bookmarksFile)
     var bookmarkArr = bookmarksFile[0]["children"][0]["children"]
     var bookmarksList = []
@@ -107,6 +125,14 @@ function main() {
             </div>`
         addUnsortedElements(unsortedBookmarks)
     }
+}
+
+function saveWidth() {
+    width = document.getElementById("slider").value+"px"
+    //console.log(width)
+    chrome.storage.sync.set({"width": width}, function() {
+        console.log('Width is set to ' + width);
+    });
 }
 
 function addElements(elements, elementIndex) {

@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+:root {
+    --width: 350px;
+}
+
 body {
     background-image: url("background.jpg");
     background-repeat: no-repeat;
@@ -12,7 +16,7 @@ body {
     background-color: #2D4263;
 }
 
-a, a:visited, h1, h2 {
+a, a:visited, h1, h2, label {
     color: #DBDBDB;
     text-decoration: none;
 }
@@ -69,7 +73,7 @@ h2 {
     background-color: hsla(218, 32%, 15%, 0.6);
     border-radius: 10px;
     padding: 15px;
-    width: 350px;
+    width: var(--width);
     overflow-x: hidden;
     backdrop-filter: blur(15px);
 }
@@ -108,4 +112,19 @@ h2 {
     display: flex;
     justify-content: right;
     margin: 20px;
+}
+
+.sliderForm {
+    padding: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.sliderForm label {
+    padding: 1em;
+}
+
+.save-width {
+    border-radius: 0.5em;
+    padding: 1em;
 }
