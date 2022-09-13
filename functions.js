@@ -138,21 +138,23 @@ function saveWidth() {
 
 function addElements(elements, elementIndex) {
     var children = elements["children"]
+
     
     // Add HTML Code
     document.getElementById("bookmarks").innerHTML += `
     <div class="directory" id="directory${elementIndex}">
-        <h2 class="directory-title">${elements["title"]}</h2>
+    <h2 class="directory-title">${elements["title"]}</h2>
     </div>
     `
-
+    
     for (let i = 0; i < children.length; i++){
+        var favicon = `chrome-extension://${chrome.runtime.id}/_favicon/?pageUrl=${encodeURIComponent(children[i]["url"])}&size=32`;
         document.getElementById("directory"+elementIndex).innerHTML += `
             <a class="card-title" href=${children[i]["url"]} target="_blank">    
                 <div class="card">
                     <div class="thumbnail-div">
-                        <!--<img class="thumbnail" src="http://www.getfavicon.org/get.pl?url=${children[i]["url"]}&submitget=get+favicon">-->
-                        <div class="bookmark-icon"></div>
+                        <img class="thumbnail" src="${favicon}">
+                        <!--<div class="bookmark-icon"></div>-->
                     </div>
                     <div class="card-title-div">
                         ${children[i]["title"]}
