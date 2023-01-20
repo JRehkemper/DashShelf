@@ -1,7 +1,7 @@
 {
     "name": "DashShelf",
     "description": "DashShelf creates a clean dashbaord of all your bookmarks and bookmarkfolders. You only need to organize your bookmarks in Google Chrome and the Plugin use them from there without manual work. The dashboard will open as the default for new tab and if you click on one of the bookmarks, it will open in another tab, keeping your dashboard usable. The Project is OpenSource and hosted on GitHub.",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "icons": {
         "16": "icon_16.png",
         "32": "icon_32.png",
@@ -11,10 +11,12 @@
     "permissions": [
         "bookmarks",
         "scripting",
-        "tabs"
+        "tabs",
+        "storage",
+        "favicon"
     ],
     "chrome_url_overrides": {
         "newtab": "index.html"
     },
     "manifest_version": 3
-}
+  }
