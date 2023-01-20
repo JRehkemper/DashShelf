@@ -7,7 +7,16 @@
     --width: 350px;
 }
 
+:root {
+    --width: 350px;
+}
+
 body {
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    background-blend-mode: multiply;
     background-image: url("background.jpg");
     background-repeat: no-repeat;
     background-size: auto;
@@ -16,6 +25,7 @@ body {
     background-color: #2D4263;
 }
 
+a, a:visited, h1, h2, label {
 a, a:visited, h1, h2, label {
     color: #DBDBDB;
     text-decoration: none;
@@ -74,10 +84,13 @@ div {
 .directory {
     margin: 2em 3em 3em 3em;
     background-color: hsla(218, 32%, 25%, 0.3);
+    background-color: hsla(218, 32%, 25%, 0.3);
     border-radius: 10px;
     padding: 15px;
     width: var(--width);
+    width: var(--width);
     overflow-x: hidden;
+    backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
 }
 
@@ -113,6 +126,41 @@ div {
 
 .github-logo-wrapper {
     display: flex;
+    justify-content: center;
+}
+
+.sliderForm {
+    /*padding: 1em;*/
+    display: flex;
+    align-items: center;
+    margin: 2em 3em 3em 3em;
+    background-color: hsla(218, 32%, 25%, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    /*width: var(--width);*/
+    overflow-x: hidden;
+    backdrop-filter: blur(15px);
+}
+
+.sliderForm label {
+    padding: 1em;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px;
+    border-radius: 0.5em;
+    margin: 0 5px 0 5px;
+    background-color: hsl(218, 32%, 18%);
+    color: #DBDBDB;
+}
+
+.save-width {
+    padding: 1em;
     justify-content: center;
 }
 
