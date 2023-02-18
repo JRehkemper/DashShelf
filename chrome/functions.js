@@ -102,6 +102,7 @@ function main() {
         const root = document.documentElement
         root.style.setProperty("--width", e.target.value+"px")
     })
+    
     console.log(bookmarksFile)
     var bookmarkArr = bookmarksFile[0]["children"][0]["children"]
     var bookmarksList = []
