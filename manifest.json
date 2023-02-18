@@ -12,11 +12,15 @@
         "bookmarks",
         "scripting",
         "tabs",
-        "storage",
-        "favicon"
+        "storage"
     ],
     "chrome_url_overrides": {
         "newtab": "index.html"
     },
-    "manifest_version": 3
+    "manifest_version": 3,
+    "browser_specific_settings": {
+        "gecko": {
+          "id": "system@jrehkemper.de"
+        }
+      }
   }
